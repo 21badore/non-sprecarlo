@@ -148,7 +148,7 @@ export default async function Home() {
         </Reveal>
 
         <h2
-          className="font-display font-bold uppercase mb-10"
+          className="font-display font-bold uppercase mb-10 text-right"
           style={{
             fontSize: "clamp(3rem, 11vw, 11rem)",
             lineHeight: 0.85,
@@ -158,7 +158,7 @@ export default async function Home() {
           <Reveal as="span" delay={1} className="block">
             Dietro
           </Reveal>
-          <Reveal as="span" delay={2} className="block md:ml-[18vw]">
+          <Reveal as="span" delay={2} className="block md:mr-[18vw]">
             le quinte
           </Reveal>
         </h2>
@@ -218,7 +218,7 @@ export default async function Home() {
         </Reveal>
 
         <h2
-          className="font-display font-bold uppercase mb-10"
+          className="font-display font-bold uppercase mb-10 text-right"
           style={{
             fontSize: "clamp(3rem, 11vw, 11rem)",
             lineHeight: 0.85,
@@ -228,7 +228,7 @@ export default async function Home() {
           <Reveal as="span" delay={1} className="block">
             Prossima
           </Reveal>
-          <Reveal as="span" delay={2} className="block md:ml-[14vw]">
+          <Reveal as="span" delay={2} className="block md:mr-[14vw]">
             mente
           </Reveal>
         </h2>
