@@ -136,7 +136,7 @@ export default async function Home() {
         id="produzione"
         bgImage="/images/film/film-02.png"
         bgAlt="Still dal cortometraggio: dettaglio in tonalità rossa"
-        bgPosition="center 30%"
+        bgPosition="left center"
         fadeHeight={70}
       >
         <Reveal
@@ -158,7 +158,7 @@ export default async function Home() {
           <Reveal as="span" delay={1} className="block">
             Dietro
           </Reveal>
-          <Reveal as="span" delay={2} className="block md:mr-[18vw]">
+          <Reveal as="span" delay={2} className="block md:mr-[3vw]">
             le quinte
           </Reveal>
         </h2>
@@ -206,7 +206,7 @@ export default async function Home() {
         id="aggiornamenti"
         bgImage="/images/film/film-05.png"
         bgAlt="Still di Non Sprecarlo: figura alla macchina da cucire"
-        bgPosition="35% center"
+        bgPosition="left center"
         fadeHeight={75}
       >
         <Reveal
@@ -228,7 +228,7 @@ export default async function Home() {
           <Reveal as="span" delay={1} className="block">
             Prossima
           </Reveal>
-          <Reveal as="span" delay={2} className="block md:mr-[14vw]">
+          <Reveal as="span" delay={2} className="block md:mr-[3vw]">
             mente
           </Reveal>
         </h2>
