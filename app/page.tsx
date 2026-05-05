@@ -15,20 +15,26 @@ export default async function Home() {
       {/* SEZIONE 1 — IL FILM */}
       <Section
         id="film"
-        bgImage="/images/film/film-04.png"
-        bgAlt="Still del cortometraggio Non Sprecarlo: silhouette di profilo"
-        bgPosition="center 30%"
-        fadeHeight={62}
+        bgImage="/images/film/film-05.png"
+        bgAlt="Still di Non Sprecarlo: figura alla macchina da cucire in una stanza in penombra"
+        bgPosition="20% center"
+        variant="right"
+        fadeHeight={70}
       >
         <Reveal as="p" className="font-mono-custom text-[11px] tracking-[0.3em] uppercase opacity-80 mb-6">
           Cortometraggio · 2026
         </Reveal>
 
-        <Reveal as="h1" delay={1} className="font-display font-bold uppercase text-fluid-section mb-8 max-w-4xl">
+        <Reveal
+          as="h1"
+          delay={1}
+          className="font-display font-bold uppercase mb-8"
+          style={{ fontSize: "clamp(2.25rem, 5.5vw, 5rem)", lineHeight: 0.95, letterSpacing: "-0.02em" }}
+        >
           Non Sprecarlo
         </Reveal>
 
-        <Reveal as="p" delay={2} className="font-display text-lg md:text-xl leading-relaxed max-w-2xl mb-10 opacity-90">
+        <Reveal as="p" delay={2} className="font-display text-base md:text-lg leading-relaxed mb-10 opacity-95">
           Anno 2984. Il mondo sta finendo. Per davvero. Infatti stavolta non ci sono previsioni.
           Un essere, che di umano ha poco, vive nel suo loculo, dove nasce, muore e produce
           con quei pochi scarti che le vecchie generazioni hanno lasciato sulla terra.
@@ -54,10 +60,10 @@ export default async function Home() {
       {/* SEZIONE 2 — DIETRO LE QUINTE / PRODUZIONE */}
       <Section
         id="produzione"
-        bgImage="/images/film/film-02.png"
-        bgAlt="Still dal cortometraggio: figura alla macchina da cucire"
+        bgImage="/images/film/film-06.png"
+        bgAlt="Still dal cortometraggio: dettaglio del braccio durante la lavorazione"
         bgPosition="center 25%"
-        fadeHeight={68}
+        fadeHeight={72}
       >
         <Reveal as="p" className="font-mono-custom text-[11px] tracking-[0.3em] uppercase opacity-80 mb-6">
           02 · La produzione
@@ -101,10 +107,10 @@ export default async function Home() {
       {/* SEZIONE 3 — AGGIORNAMENTI */}
       <Section
         id="aggiornamenti"
-        bgImage="/images/film/film-05.png"
-        bgAlt="Still dal cortometraggio: atmosfera rossa"
+        bgImage="/images/film/film-02.png"
+        bgAlt="Still dal cortometraggio: dettaglio in tonalità rossa"
         bgPosition="center 30%"
-        fadeHeight={70}
+        fadeHeight={72}
       >
         <Reveal as="p" className="font-mono-custom text-[11px] tracking-[0.3em] uppercase opacity-80 mb-6">
           03 · Aggiornamenti
