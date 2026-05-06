@@ -103,14 +103,29 @@ Sito **one-page con 3 sezioni full-screen a scorrimento**, più una pagina `/new
 ### Foto (in `public/images/film/`)
 6 still del film, tutti **2622×1206 PNG** (aspect ratio 2.17:1), peso 1.8–3 MB ciascuno.
 
-| File | Soggetto | Punti focali |
-|------|----------|--------------|
-| `film-01.png` | Tubo di vetro su torso | curva del tubo, riflesso (sx) |
-| `film-02.png` | Atmosfera rossa, occhio/ciglia | occhio (centro-sx), macchia rossa (basso-sx) |
-| `film-03.png` | Silhouette di profilo controluce | volto/profilo (centro), luce dx |
-| `film-04.png` | Rubinetto, mano, bicchiere | rubinetto (alto-dx), mano (basso-sx), bicchiere (basso-centro) |
-| `film-05.png` | Stanza in penombra, figura alla macchina da cucire | figura (sx-centro), finestra (sx alta), pavimento con scarti |
-| `film-06.png` | Close-up del braccio durante la lavorazione | pistola/macchina (alto-sx), braccio orizzontale, tatuaggio rosso |
+#### `film-01.png` — Tubo di vetro su torso
+Punti focali: curva del tubo (sx), riflesso luminoso. Atmosfera blu/scura, intima.
+![film-01](./public/images/film/film-01.png)
+
+#### `film-02.png` — Atmosfera rossa, occhio/ciglia
+Punti focali: occhio (centro-sx), macchia rossa (basso-sx). Astratto, viscerale.
+![film-02](./public/images/film/film-02.png)
+
+#### `film-03.png` — Silhouette di profilo controluce
+Punti focali: volto/profilo (centro), luce dx. Cinematografico, epico.
+![film-03](./public/images/film/film-03.png)
+
+#### `film-04.png` — Rubinetto, mano, bicchiere
+Punti focali: rubinetto (alto-dx), mano (basso-sx), bicchiere (basso-centro). Composizione complessa, narrativa.
+![film-04](./public/images/film/film-04.png)
+
+#### `film-05.png` — Stanza in penombra, figura alla macchina da cucire
+Punti focali: figura (sx-centro), finestra (sx alta), pavimento con scarti. **Campo lungo iconico**, ottimo per hero.
+![film-05](./public/images/film/film-05.png)
+
+#### `film-06.png` — Close-up del braccio durante la lavorazione
+Punti focali: pistola/macchina (alto-sx), braccio orizzontale, tatuaggio rosso. Intenso, processuale.
+![film-06](./public/images/film/film-06.png)
 
 ### Trailer
 Da inserire come URL Vimeo (placeholder attuale: `https://vimeo.com/000000000`). **Niente embed sul sito** — solo link testuale che apre il video esterno (decisione del cliente).
