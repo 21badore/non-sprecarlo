@@ -54,10 +54,9 @@ export default function SectionQuinte() {
 
           <div className="quinte-right">
             <Reveal as="p" delay={2} className="quinte-paragraph">
-              Cinque minuti girati in <strong>2,39:1 anamorfico</strong>, in un loculo
-              ricostruito sul set. Niente CGI: solo luce praticabile, scarti veri, e un
-              lavoro di set design che ha trasformato lo spazio in un personaggio.
-              Un cortometraggio di ricerca — sobrio, claustrofobico, post-apocalittico.
+              Cinque minuti girati in <strong>2,39:1</strong> in un loculo ricostruito sul set.
+              Solo luce, scarti veri, e un lavoro di set design che ha trasformato lo spazio
+              in un personaggio. Un cortometraggio di ricerca — sobrio, claustrofobico, post-apocalittico.
             </Reveal>
 
             <Reveal delay={3} className="tech-sheet">
