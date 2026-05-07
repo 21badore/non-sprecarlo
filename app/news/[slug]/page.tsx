@@ -8,6 +8,12 @@ interface Props {
   params: { slug: string };
 }
 
+function formatDate(iso: string): string {
+  const [y, m, d] = iso.split("-");
+  if (!y || !m || !d) return iso;
+  return `${d} · ${m} · ${y}`;
+}
+
 export async function generateStaticParams() {
   const news = await getAllNews();
   return news.map((n) => ({ slug: n.slug }));
@@ -27,32 +33,33 @@ export default async function NewsSlugPage({ params }: Props) {
   if (!item) notFound();
 
   return (
-    <main className="bg-[#F5EFE6] text-[#1A1612] pt-32 pb-24 min-h-screen">
-      <article className="max-w-2xl mx-auto px-6 md:px-12">
+    <main className="news-article">
+      <div className="inner">
         <Link
           href="/news"
-          className="inline-flex items-center gap-2 font-mono-custom text-[11px] tracking-[0.25em] uppercase mb-12 border-b border-[#1A1612]/30 pb-1 hover:border-[#C75D3D] hover:text-[#C75D3D] transition-colors duration-200"
+          className="back"
+          style={{
+            fontSize: 11,
+            letterSpacing: "0.32em",
+            textTransform: "uppercase",
+            fontWeight: 700,
+            display: "inline-flex",
+            gap: 8,
+            marginBottom: 24,
+            paddingBottom: 4,
+            borderBottom: "1px solid var(--line-strong)",
+          }}
         >
           ← Tutti gli aggiornamenti
         </Link>
 
-        <time className="font-mono-custom text-[11px] tracking-[0.25em] uppercase opacity-60 block mb-4">
-          {item.date}
-        </time>
-        <h1 className="font-display font-bold uppercase text-3xl md:text-5xl leading-tight tracking-tight mb-12">
-          {item.title}
-        </h1>
+        <time>{formatDate(item.date)}</time>
+        <h1>{item.title}</h1>
 
-        <div className="prose-content font-display text-lg leading-relaxed
-          [&_p]:mb-6 [&_p]:opacity-90
-          [&_h2]:font-display [&_h2]:font-medium [&_h2]:text-2xl [&_h2]:mt-12 [&_h2]:mb-4
-          [&_blockquote]:border-l-2 [&_blockquote]:border-[#C75D3D] [&_blockquote]:pl-6 [&_blockquote]:italic [&_blockquote]:my-8 [&_blockquote]:opacity-80
-          [&_strong]:font-medium
-          [&_a]:text-[#C75D3D] [&_a]:border-b [&_a]:border-[#C75D3D]/30 [&_a]:hover:border-[#C75D3D] [&_a]:transition-colors [&_a]:duration-200
-        ">
+        <div className="body">
           <MDXRemote source={item.content} />
         </div>
-      </article>
+      </div>
     </main>
   );
 }

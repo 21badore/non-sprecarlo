@@ -6,8 +6,8 @@ interface RevealProps {
   children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
-  delay?: 0 | 1 | 2 | 3;
-  as?: "div" | "h1" | "h2" | "p" | "span" | "section";
+  delay?: 0 | 1 | 2 | 3 | 4;
+  as?: "div" | "h1" | "h2" | "p" | "span" | "section" | "figure" | "ul" | "li" | "a";
 }
 
 export default function Reveal({
@@ -33,19 +33,19 @@ export default function Reveal({
           }
         });
       },
-      { threshold: 0.2, rootMargin: "0px 0px -10% 0px" }
+      { threshold: 0.05, rootMargin: "-80px 0px" }
     );
 
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
 
-  const delayClass = delay > 0 ? `reveal-delay-${delay}` : "";
+  const delayClass = delay > 0 ? `d${delay}` : "";
 
   return (
     <Tag
-      ref={ref as React.RefObject<HTMLDivElement & HTMLHeadingElement & HTMLParagraphElement>}
-      className={`reveal ${delayClass} ${visible ? "is-visible" : ""} ${className}`}
+      ref={ref as never}
+      className={`reveal ${delayClass} ${visible ? "in" : ""} ${className}`.trim()}
       style={style}
     >
       {children}

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-type Status = "idle" | "loading" | "success" | "error" | "duplicate";
+type Status = "idle" | "loading" | "ok" | "error" | "duplicate";
 
 export default function NewsletterForm() {
   const [email, setEmail] = useState("");
@@ -11,9 +11,10 @@ export default function NewsletterForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!email) return;
+    if (!email.trim()) return;
 
     setStatus("loading");
+    setMessage("");
 
     try {
       const res = await fetch("/api/subscribe", {
@@ -24,7 +25,7 @@ export default function NewsletterForm() {
       const data = await res.json();
 
       if (res.ok) {
-        setStatus("success");
+        setStatus("ok");
         setMessage("Iscritto. Controlla la mail.");
         setEmail("");
       } else if (res.status === 409) {
@@ -40,41 +41,31 @@ export default function NewsletterForm() {
     }
   }
 
-  return (
-    <div className="max-w-xl">
-      <form onSubmit={handleSubmit} noValidate>
-        <div className="flex flex-col sm:flex-row gap-3">
-          <input
-            id="newsletter-email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="la tua email"
-            required
-            disabled={status === "loading" || status === "success"}
-            className="flex-1 bg-transparent border-b border-white/40 px-1 py-3 font-display text-base md:text-lg placeholder:text-white/40 focus:outline-none focus:border-[#C75D3D] transition-colors duration-200 disabled:opacity-50"
-            aria-label="Indirizzo email per la newsletter"
-          />
-          <button
-            type="submit"
-            disabled={status === "loading" || status === "success"}
-            className="font-mono-custom text-[11px] tracking-[0.25em] uppercase px-6 py-3 bg-[#C75D3D] hover:bg-[#a94a2d] transition-colors duration-200 disabled:opacity-50 whitespace-nowrap"
-          >
-            {status === "loading" ? "..." : "Iscriviti"}
-          </button>
-        </div>
-      </form>
+  const buttonLabel =
+    status === "ok" ? "Iscritto" : status === "loading" ? "..." : "Iscriviti";
 
+  return (
+    <>
+      <form className="newsletter-form" onSubmit={handleSubmit} noValidate>
+        <input
+          type="email"
+          placeholder="la-tua-mail@dominio.it"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          disabled={status === "ok"}
+          aria-label="Email per la newsletter"
+          required
+        />
+        <button type="submit" disabled={status === "loading" || status === "ok"}>
+          {buttonLabel}
+          {status !== "ok" && <span>→</span>}
+        </button>
+      </form>
       {message && (
-        <p
-          className={`font-mono-custom text-xs tracking-wide mt-4 ${
-            status === "success" ? "text-white/80" : "text-[#FFB088]"
-          }`}
-          role="alert"
-        >
+        <span className="newsletter-status" role="alert">
           {message}
-        </p>
+        </span>
       )}
-    </div>
+    </>
   );
 }

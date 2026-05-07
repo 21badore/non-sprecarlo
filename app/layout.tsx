@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Jost } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Grain from "@/components/Grain";
 
 const jost = Jost({
   subsets: ["latin"],
-  weight: ["500", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-jost",
   display: "swap",
 });
@@ -31,8 +31,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it" className={jost.variable}>
-      <body className="font-display">
-        <Header />
+      <body>
+        <Grain />
         {children}
         <Footer />
       </body>

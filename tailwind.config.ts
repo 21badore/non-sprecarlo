@@ -9,13 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        accent: "#C75D3D",
         cream: "#F5EFE6",
+        "cream-2": "#ECE4D6",
         ink: "#1A1612",
+        "ink-soft": "#2C2620",
+        muted: "#8A8074",
+        accent: "#C75D3D",
       },
       fontFamily: {
-        display: ["Futura", "Futura PT", "var(--font-jost)", "sans-serif"],
-        mono: ["Futura", "Futura PT", "var(--font-jost)", "sans-serif"],
+        display: ["var(--font-jost)", "Futura", "Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
       },
     },
   },
