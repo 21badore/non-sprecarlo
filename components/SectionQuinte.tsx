@@ -55,7 +55,7 @@ export default function SectionQuinte() {
           <div className="quinte-right">
             <Reveal as="p" delay={2} className="quinte-paragraph">
               Cinque minuti girati in <strong>2,39:1</strong> in un loculo ricostruito sul set.
-              Solo luce, scarti veri, e un lavoro di set design che ha trasformato lo spazio
+              Solo luce, scarti veri e un lavoro di set design che ha trasformato lo spazio
               in un personaggio. Un cortometraggio di ricerca — sobrio, claustrofobico, post-apocalittico.
             </Reveal>
 
@@ -71,9 +71,9 @@ export default function SectionQuinte() {
             <Reveal delay={4} className="sponsors">
               <span className="label">— con il supporto di</span>
               <div className="marks">
-                <span>Weave</span>
-                <span>Moviepeople</span>
-                <span>SCPT</span>
+                <a href="https://www.w3ave.com/" target="_blank" rel="noopener noreferrer">Weave</a>
+                <a href="https://www.moviepeople.it/it/" target="_blank" rel="noopener noreferrer">Moviepeople</a>
+                <a href="https://scptmodalenta.com/" target="_blank" rel="noopener noreferrer">SCPT</a>
               </div>
             </Reveal>
           </div>

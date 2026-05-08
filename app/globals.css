@@ -452,15 +452,26 @@ main { scroll-snap-type: y proximity; }
   font-weight: 500;
   letter-spacing: -0.01em;
 }
-.sponsors .marks span {
+.sponsors .marks a {
   position: relative;
   padding-right: 22px;
+  color: inherit;
+  text-decoration: none;
+  transition: color 160ms ease, transform 160ms ease;
 }
-.sponsors .marks span:not(:last-child)::after {
+.sponsors .marks a:hover,
+.sponsors .marks a:focus-visible {
+  color: var(--accent, #c8431f);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.sponsors .marks a:not(:last-child)::after {
   content: "·";
   position: absolute;
   right: 0;
   color: var(--muted);
+  text-decoration: none;
+  display: inline-block;
 }
 
 /* ──────────────── S3 — PROSSIMAMENTE ──────────────── */
