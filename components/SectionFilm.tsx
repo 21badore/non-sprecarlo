@@ -13,10 +13,10 @@ export default function SectionFilm() {
         <Reveal className="film-markers">
           <div className="left">
             <span className="ticker">REC · CORTOMETRAGGIO</span>
-            <span>2,39 : 1 · ANAMORFICO</span>
+            <span className="format-info">2,39 : 1 · ANAMORFICO</span>
           </div>
           <div className="right">
-            <TimeTicker />
+            <span className="time-info"><TimeTicker /></span>
             <span>FRAME 01 / 03</span>
           </div>
         </Reveal>

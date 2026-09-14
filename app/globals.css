@@ -792,3 +792,27 @@ main { scroll-snap-type: y proximity; }
   .site-footer .center, .site-footer .right { text-align: center; }
   .news-row { grid-template-columns: 70px 1fr auto; }
 }
+
+/* Phones only — hero title must fit on one line without clipping,
+   and the marker row loses the items that don't fit next to it. */
+@media (max-width: 640px) {
+  .film-title-top .title-line.non {
+    font-size: clamp(28px, calc(12.8vw - 7.8px), 51px);
+  }
+  .film-title-bottom .title-line.sprecarlo {
+    font-size: clamp(36px, calc(17.1vw - 10.4px), 68px);
+  }
+  .film-markers .format-info,
+  .film-markers .time-info {
+    display: none;
+  }
+
+  /* On phones the hero's scroll-reveal never fires for these two rows
+     (top row sits above the observer's shrunk trigger band, and the
+     bottom title sits below it) — show them immediately instead. */
+  .film-markers.reveal,
+  .film-title-bottom.reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
