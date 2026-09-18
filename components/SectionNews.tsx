@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Reveal from "./Reveal";
-import NewsletterForm from "./NewsletterForm";
 import { getAllNews } from "@/lib/news";
+import { TELEGRAM_URL } from "@/lib/links";
 
 function formatDate(iso: string): string {
   // "2026-05-01" -> "01 · 05 · 2026"
@@ -39,15 +39,23 @@ export default async function SectionNews() {
         <div className="news-body">
           <Reveal delay={2} className="newsletter">
             <div className="newsletter-label">
-              <span>✦ Newsletter</span>
-              <span>00 / 248 iscritti</span>
+              <span>✦ Telegram</span>
+              <span>Canale ufficiale</span>
             </div>
             <p className="newsletter-headline">
-              Una mail quando il film esce. Niente di più, niente di meno.
+              Gli aggiornamenti sul film, sul canale Telegram.
             </p>
-            <NewsletterForm />
+            <a
+              className="telegram-link"
+              href={TELEGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Apri il canale
+              <span className="arrow">→</span>
+            </a>
             <span className="newsletter-fineprint">
-              Una sola mail, all&apos;uscita del film. Nessun tracker.
+              Nessuna iscrizione, nessun indirizzo email.
             </span>
           </Reveal>
 
@@ -57,13 +65,27 @@ export default async function SectionNews() {
                 <span className="title">Nessun aggiornamento disponibile.</span>
               </p>
             ) : (
-              latest.map((n) => (
-                <Link key={n.slug} href={`/news/${n.slug}`} className="news-row">
-                  <span className="date">{formatDate(n.date)}</span>
-                  <span className="title">{n.title}</span>
-                  <span className="arrow">LEGGI →</span>
-                </Link>
-              ))
+              latest.map((n) =>
+                n.link ? (
+                  <a
+                    key={n.slug}
+                    href={n.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="news-row"
+                  >
+                    <span className="date">{formatDate(n.date)}</span>
+                    <span className="title">{n.title}</span>
+                    <span className="arrow">APRI →</span>
+                  </a>
+                ) : (
+                  <Link key={n.slug} href={`/news/${n.slug}`} className="news-row">
+                    <span className="date">{formatDate(n.date)}</span>
+                    <span className="title">{n.title}</span>
+                    <span className="arrow">LEGGI →</span>
+                  </Link>
+                )
+              )
             )}
             <div className="news-archive">
               <Link className="cta" href="/news">
