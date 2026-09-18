@@ -10,6 +10,8 @@ export interface NewsItem {
   date: string;
   excerpt: string;
   content: string;
+  /** Se presente, la voce punta fuori dal sito e non ha una pagina propria. */
+  link?: string;
 }
 
 export async function getAllNews(): Promise<NewsItem[]> {
@@ -30,6 +32,7 @@ export async function getAllNews(): Promise<NewsItem[]> {
       date: data.date ?? "",
       excerpt: data.excerpt ?? "",
       content,
+      link: data.link || undefined,
     };
   });
 
@@ -38,5 +41,7 @@ export async function getAllNews(): Promise<NewsItem[]> {
 
 export async function getNewsBySlug(slug: string): Promise<NewsItem | null> {
   const all = await getAllNews();
-  return all.find((n) => n.slug === slug) ?? null;
+  const item = all.find((n) => n.slug === slug);
+  // Le voci che puntano fuori dal sito non generano una pagina.
+  return item && !item.link ? item : null;
 }

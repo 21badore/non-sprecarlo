@@ -16,7 +16,8 @@ function formatDate(iso: string): string {
 
 export async function generateStaticParams() {
   const news = await getAllNews();
-  return news.map((n) => ({ slug: n.slug }));
+  // Le voci che puntano fuori dal sito non hanno una pagina da generare.
+  return news.filter((n) => !n.link).map((n) => ({ slug: n.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

@@ -29,9 +29,20 @@ export default async function NewsPage() {
               <time>{formatDate(item.date)}</time>
               <h2>{item.title}</h2>
               <p>{item.excerpt}</p>
-              <Link href={`/news/${item.slug}`} className="read">
-                Leggi →
-              </Link>
+              {item.link ? (
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="read"
+                >
+                  Apri →
+                </a>
+              ) : (
+                <Link href={`/news/${item.slug}`} className="read">
+                  Leggi →
+                </Link>
+              )}
             </article>
           ))
         )}
