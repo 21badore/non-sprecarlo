@@ -150,7 +150,7 @@ main { scroll-snap-type: y proximity; }
 .s-film .bg {
   position: absolute;
   inset: 0;
-  background-image: url("/images/film/film-04.png");
+  background-image: url("/images/film/film-04.webp");
   background-size: cover;
   background-position: center 30%;
   filter: brightness(0.78) contrast(1.05);
@@ -485,7 +485,7 @@ main { scroll-snap-type: y proximity; }
 .s-news .bg-photo {
   position: absolute;
   inset: 0;
-  background-image: url("/images/film/film-05.png");
+  background-image: url("/images/film/film-05.webp");
   background-size: cover;
   background-position: center;
   opacity: 0.12;
