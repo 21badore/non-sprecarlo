@@ -646,15 +646,13 @@ main { scroll-snap-type: y proximity; }
   color: rgba(245,239,230,0.6);
   padding: 32px;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr;
   gap: 32px;
   font-size: 11px;
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
   border-top: 1px solid rgba(245,239,230,0.12);
 }
-.site-footer .right { text-align: right; }
-.site-footer a:hover { color: var(--accent); }
 
 /* ──────────────── NEWS PAGES (/news, /news/[slug]) ──────────────── */
 .news-page {
@@ -766,8 +764,7 @@ main { scroll-snap-type: y proximity; }
   .news-top { grid-template-columns: 1fr; gap: 18px; }
   .news-headline { text-align: left; }
   .news-body { grid-template-columns: 1fr; gap: 36px; }
-  .site-footer { grid-template-columns: 1fr; text-align: center; }
-  .site-footer .right { text-align: center; }
+  .site-footer { text-align: center; }
   .news-row { grid-template-columns: 70px 1fr auto; }
 }
 
