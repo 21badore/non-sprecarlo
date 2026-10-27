@@ -541,25 +541,17 @@ main { scroll-snap-type: y proximity; }
 }
 
 /* Newsletter */
-.newsletter {
+.telegram-block {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  align-self: start;
 }
-.newsletter-label {
+.telegram-label {
   font-size: 11px;
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
   color: rgba(245,239,230,0.6);
-  display: flex;
-  justify-content: space-between;
-}
-.newsletter-headline {
-  font-size: 22px;
-  line-height: 1.25;
-  font-weight: 500;
-  letter-spacing: -0.015em;
-  max-width: 28ch;
 }
 .telegram-link {
   display: flex;
@@ -580,11 +572,6 @@ main { scroll-snap-type: y proximity; }
 }
 .telegram-link:hover .arrow {
   transform: translateX(8px);
-}
-.newsletter-fineprint {
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  color: rgba(245,239,230,0.4);
 }
 
 /* News list */

@@ -37,14 +37,8 @@ export default async function SectionNews() {
         </div>
 
         <div className="news-body">
-          <Reveal delay={2} className="newsletter">
-            <div className="newsletter-label">
-              <span>✦ Telegram</span>
-              <span>Canale ufficiale</span>
-            </div>
-            <p className="newsletter-headline">
-              Gli aggiornamenti sul film, sul canale Telegram.
-            </p>
+          <Reveal delay={2} className="telegram-block">
+            <span className="telegram-label">✦ Telegram</span>
             <a
               className="telegram-link"
               href={TELEGRAM_URL}
@@ -54,9 +48,6 @@ export default async function SectionNews() {
               Apri il canale
               <span className="arrow">→</span>
             </a>
-            <span className="newsletter-fineprint">
-              Nessuna iscrizione, nessun indirizzo email.
-            </span>
           </Reveal>
 
           <Reveal delay={3} className="news-list">
